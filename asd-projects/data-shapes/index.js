@@ -35,13 +35,40 @@ $(document).ready(function () {
   /////////////////////////////////////////////////
 
   // TODO 1: create a new shape object and add it to the array
-  
+  var shape = {
+    color: blue 
+    shape: "circle"
+    repeat:4
+  }
 
   // TODO 2: add a new property to all data shapes
-  
+  const dataShapes = [
+  { type: 'circle', color: 'red' },
+  { type: 'square', color: 'blue' },
+  { type: 'triangle', color: 'green' },
+  { type: 'pentagon', color: 'red' },
+];
+
+for (let i = 0; i < dataShapes.length; i++) {
+  const currentShape = dataShapes[i];
+
+  if (currentShape.color === "red") {
+    currentShape.goodBehavior = "bounce";
+  } else if (currentShape.color === "blue") {
+    currentShape.goodBehavior = "blink";
+  } else {
+    currentShape.goodBehavior = "spin";
+  }
+}
 
   // TODO 3-a: add a function that handles the static display type
+  function handleStatic(data) {
+  // Call the function setBackgroundWithObject, passing data as the argument
+  setBackgroundWithObject(data);
   
+  // Set animationDetails.displayType to 1
+  animationDetails.displayType = 1;
+}
 
   // TODO 4-a: add a function that handles the good display type
   
