@@ -10,20 +10,28 @@ function runProgram(){
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
+  const KEY = {
+    ENTER: 13,
+    LEFT: 37,
+    UP: 38,
+    RIGHT: 39, 
+    DOWN: 40,
+  };
   
+  var walker
   // Game Item Objects
 
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-
+  
   /* 
   This section is where you set up event listeners for user input.
   For example, if you wanted to handle a click event on the document, you would replace 'eventType' with 'click', and if you wanted to execute a function named 'handleClick', you would replace 'handleEvent' with 'handleClick'.
 
   Note: You can have multiple event listeners for different types of events.
   */
-  $(document).on('eventType', handleEvent);                          
+  $(document).on('keydown', handleKeyDown);                          
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -33,8 +41,31 @@ function runProgram(){
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
-  function newFrame() {
+  function handleKeyDown() {
+ console.log(Event.which);
     
+ $(document).on('keydown', handleKeyDown);
+
+ function handleKeyDown(event) {
+   if (event.which === 13){
+ $("p").text("enter pressed");
+ }
+ else if(event.which === 38){
+$("p").text("up pressed");
+ }
+  else if(event.which === 40){
+ $("p").text("down pressed");
+ }
+ else if(event.which === 39){
+ $("p").text("right pressed");
+ }
+ else if(event.which === 37){
+ $("p").text("left pressed");
+ }
+ else {
+$("p").text("no key pressed");  
+ }
+ }
 
   }
   
