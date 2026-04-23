@@ -6,6 +6,8 @@ $(document).ready(function () {
   $("#reset").on("click", resetAndRender);
 });
 
+var applyFilter;
+
 /////////////////////////////////////////////////////////
 //////// event handler functions are below here /////////
 /////////////////////////////////////////////////////////
@@ -18,7 +20,7 @@ function resetAndRender() {
 
 // this function applies the filters to the image and is where you should call
 // all of your apply functions
-function applyAndRender() {
+function applyAndRender(applyFilter()) {
   // Multiple TODOs: Call your apply function(s) here
 
   
