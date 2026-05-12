@@ -6,7 +6,7 @@ $(document).ready(function () {
   $("#reset").on("click", resetAndRender);
 });
 
-var applyFilter;
+
 
 /////////////////////////////////////////////////////////
 //////// event handler functions are below here /////////
@@ -34,7 +34,7 @@ function applyAndRender(applyFilter()) {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
-
+var applyFilter;
 
 // TODO 9 Create the applyFilterNoBackground function
 
